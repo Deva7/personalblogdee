@@ -62,10 +62,16 @@
             <scope>test</scope>
         </dependency>
 
-        <!--		MybatisPlus-maven-->
+        <!--MybatisPlus-maven-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.1.2</version>
+        </dependency>
+        <!--MybatisPlus-autoGenerator-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
             <version>3.1.2</version>
         </dependency>
     </dependencies>
