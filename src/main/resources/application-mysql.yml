@@ -80,9 +80,9 @@ spring:
       max-file-size: 200MB
       # 最大请求大小
       max-request-size: 215MB
-file:
-  upload:
-    path: D:/attachment/
+DB:
+  url: jdbc:mysql://103.45.172.175:3306/BlogDB?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC
+
 
 logging:
   config: classpath:logback-spring.xml

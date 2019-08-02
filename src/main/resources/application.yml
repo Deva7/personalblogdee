@@ -16,5 +16,3 @@ mybatis-plus:
   mapper-locations: classpath:/MapperXml/*
 
 
-DBurl:
-jdbc:mysql://103.45.172.175:3306/BlogDB?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC

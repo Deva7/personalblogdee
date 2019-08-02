@@ -3,20 +3,13 @@ package com.BlogForDevlin.Configuration;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
-import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
-import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
-import com.baomidou.mybatisplus.generator.config.po.TableInfo;
-import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import org.springframework.beans.factory.annotation.Value;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -27,7 +20,7 @@ import java.util.Scanner;
  */
 public class MyBatisPlusGenerator {
 
-    /*@Value("${DBurl}")
+    /*@Value("${DB.url}")
     static private String DBurl;*/
     /**
      * <p>
@@ -55,13 +48,13 @@ public class MyBatisPlusGenerator {
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setDbType(DbType.MYSQL);
-        dsc.setUrl("jdbc:mysql://localhost:7676/item?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8");
+        dsc.setUrl("jdbc:mysql://localhost:7676/mysql?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         //dsc.setSchemaName("item");
         dsc.setUsername("Devlin");
         dsc.setPassword("Alpha.1111");
 
-        dsc.setTypeConvert(new MySqlTypeConvert() {
+        /*dsc.setTypeConvert(new MySqlTypeConvert() {
             @Override
             public DbColumnType processTypeConvert(GlobalConfig globalConfig, String fieldType) {
                 System.out.println("转换类型：" + fieldType);
@@ -75,7 +68,7 @@ public class MyBatisPlusGenerator {
                 }
                 return (DbColumnType) super.processTypeConvert(globalConfig, fieldType);
             }
-        });
+        });*/
 
         mpg.setDataSource(dsc);
 
@@ -95,9 +88,9 @@ public class MyBatisPlusGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("taiji.item");
-        pc.setEntity("model.auto");
-        pc.setMapper("mapper.auto");
+        pc.setParent("com.BlogForDevlin");
+        pc.setEntity("Mapper.BO");
+        pc.setMapper("Entity.BO");
 
         mpg.setPackageInfo(pc);
 
@@ -112,8 +105,8 @@ public class MyBatisPlusGenerator {
         // 配置模板
         TemplateConfig templateConfig = new TemplateConfig();
 
-        templateConfig.setEntity("itemplates/entity.java");
-        templateConfig.setMapper("itemplates/mapper.java");
+        templateConfig.setEntity("Templates/entity.java");
+        templateConfig.setMapper("Templates/mapper.java");
         templateConfig.setController(null);
         templateConfig.setService(null);
         templateConfig.setServiceImpl(null);
@@ -122,8 +115,8 @@ public class MyBatisPlusGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        //strategy.setInclude(scanner("表名"));
-        strategy.setInclude("s_zhuxiang");
+        strategy.setInclude(scanner("表名"));
+        //strategy.setInclude("s_zhuxiang");
 
         strategy.setSuperEntityClass("com.baomidou.mybatisplus.extension.activerecord.Model");
         strategy.setNaming(NamingStrategy.underline_to_camel);

@@ -66,13 +66,19 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.1.2</version>
+            <version> RELEASE</version>
         </dependency>
         <!--MybatisPlus-autoGenerator-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
-            <version>3.1.2</version>
+            <version> RELEASE</version>
+        </dependency>
+        <!-- freemarker 模板引擎 -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>RELEASE</version>
         </dependency>
     </dependencies>
 
