@@ -13,11 +13,10 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import java.util.Scanner;
 
 /**
- * @author Jinyl
- * @date 2019/7/31
- * @Mail Jinyl@mail.taiji.com.cn
- * @Describe:
- */
+ * @program: personalblog
+ * @author: Devlin
+ * @create: 2019-08-03 22:02
+ **/
 public class MyBatisPlusGenerator {
 
     /*@Value("${DB.url}")

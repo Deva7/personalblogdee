@@ -1,7 +1,7 @@
 server:
   port: 8088
   servlet:
-    context-path: /item
+    context-path: /blog
 
 spring:
   autoconfigure:
@@ -83,6 +83,6 @@ spring:
 DB:
   url: jdbc:mysql://103.45.172.175:3306/BlogDB?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC
 
-
-logging:
-  config: classpath:logback-spring.xml
+#
+#logging:
+#  config: classpath:logback-spring.xml
