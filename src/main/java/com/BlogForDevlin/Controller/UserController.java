@@ -1,8 +1,12 @@
 package com.BlogForDevlin.Controller;
 
+import com.BlogForDevlin.Entity.DO.UserDetails;
+import com.BlogForDevlin.Entity.DTO.UserDTO;
+import com.BlogForDevlin.mapper.UserMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +25,10 @@ import javax.servlet.http.HttpServletRequest;
 @Api(tags = "用户操作",description = "增，删，改，查，第三方",hidden = true)
 @RequestMapping("/User")
 public class UserController {
+
+    @Autowired
+    private UserMapper userMapper;
+
     /**
     * @Author: Devlin
     * @Description: User Init Function
@@ -31,7 +39,12 @@ public class UserController {
     @ResponseBody
     @RequestMapping("/init")
     @ApiOperation(value="测试接口", notes="测试接口详细描述")
-    public void UserInit(@ApiParam(required=true, name="name", value="姓名")@RequestBody String param, HttpServletRequest httpServletRequest){
-        System.out.println(param);
+    public void UserInit(@ApiParam(required=true, name="name", value="姓名")@RequestBody UserDTO userDTO, HttpServletRequest httpServletRequest){
+        UserDetails userDetails=new UserDetails();
+        userDetails.setUserName(userDTO.getUserName());
+        userDetails.setUserAddress(userDTO.getUserAddress());
+        userDetails.setUserPhone(userDTO.getUserPhone());
+        int count=userMapper.insert(userDetails);
+        System.out.println(count+"?"+userDTO);
     }
 }

@@ -1,5 +1,6 @@
 package com.BlogForDevlin.Entity.DO;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.util.Date;
@@ -10,7 +11,9 @@ import java.util.Date;
  * @author: Devlin
  * @create: 2019-08-03 22:02
  **/
+
 @Data
+@TableName("user_details")
 public class UserDetails {
     private Integer id;
     private Date gmtCreateTime;

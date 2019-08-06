@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @create: 2019-08-03 22:02
  **/
 @SpringBootApplication(scanBasePackages = "com.BlogForDevlin")
-@MapperScan("com.BlogForDevlin.MapperXml")
+@MapperScan("com.BlogForDevlin.mapper")
 public class PersonalblogApplication {
 
     public static void main(String[] args) {
