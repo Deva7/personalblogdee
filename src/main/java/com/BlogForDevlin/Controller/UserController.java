@@ -8,12 +8,11 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * @program: personalblog
@@ -37,7 +36,7 @@ public class UserController {
     * @Date: 2019-08-04
     */
     @ResponseBody
-    @RequestMapping("/init")
+    @RequestMapping(value = "/init",method = POST)
     @ApiOperation(value="测试接口", notes="测试接口详细描述")
     public void UserInit(@ApiParam(required=true, name="name", value="姓名")@RequestBody UserDTO userDTO, HttpServletRequest httpServletRequest){
         UserDetails userDetails=new UserDetails();
@@ -45,6 +44,16 @@ public class UserController {
         userDetails.setUserAddress(userDTO.getUserAddress());
         userDetails.setUserPhone(userDTO.getUserPhone());
         int count=userMapper.insert(userDetails);
+
         System.out.println(count+"?"+userDTO);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/initTest",method = POST)
+    @ApiOperation(value="测试接口", notes="测试接口详细描述")
+    public void initTest(@ApiParam(required=true, name="name", value="姓名")@RequestBody UserDetails userDetails, HttpServletRequest httpServletRequest){
+        int count=userMapper.insert(userDetails);
+        System.out.println(count+"?"+userDetails);
     }
 }
