@@ -1,4 +1,4 @@
-package com.BlogForDevlin.Entity.VO;
+package com.BlogForDevlin.entity.VO;
 
 /**
  * @program: personalblog

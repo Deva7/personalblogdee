@@ -1,4 +1,4 @@
-package com.BlogForDevlin.Configuration;
+package com.BlogForDevlin.configuration;
 
 
 import com.baomidou.mybatisplus.annotation.DbType;

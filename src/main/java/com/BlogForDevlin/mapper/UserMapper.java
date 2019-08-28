@@ -1,6 +1,6 @@
 package com.BlogForDevlin.mapper;
 
-import com.BlogForDevlin.Entity.DO.UserDetails;
+import com.BlogForDevlin.entity.DO.UserDetails;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

@@ -1,4 +1,4 @@
-package com.BlogForDevlin.Entity.DTO;
+package com.BlogForDevlin.entity.DTO;
 
 import lombok.Data;
 
