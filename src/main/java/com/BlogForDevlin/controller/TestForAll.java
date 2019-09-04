@@ -32,6 +32,11 @@ public class TestForAll {
     private StringRedisTemplate stringRedisTemplate;
 
 
+    @GetMapping
+    public String getUsers() {
+        return "Hello Spring Security";
+    }
+
     /**
      * @Author: Devlin
      * @Description: test redis connect
@@ -44,9 +49,9 @@ public class TestForAll {
     @ApiOperation(value = "testRedis", notes = "redis connect and value get")
     public void UserInit(HttpServletRequest httpServletRequest) {
 
-        stringRedisTemplate.opsForValue().set("name","123123");
-        String str=stringRedisTemplate.opsForValue().get("name");
+        stringRedisTemplate.opsForValue().set("name", "123123");
+        String str = stringRedisTemplate.opsForValue().get("name");
 
-        System.out.println("Redis key 'name' value is: "+str);
+        System.out.println("Redis key 'name' value is: " + str);
     }
 }
