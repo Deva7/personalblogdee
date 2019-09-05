@@ -8,9 +8,6 @@ spring:
   thymeleaf:
     cache: false
 
-
-
-
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
