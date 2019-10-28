@@ -35,7 +35,7 @@ public class Swagger2 {
                 .description("个人博客swagger API")
                 .termsOfServiceUrl("")
                 .contact("Devlin Kim")
-                .version("1.0")
+                .version("1.2")
                 .build();
     }
 }

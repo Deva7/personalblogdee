@@ -47,10 +47,10 @@ public class MyBatisPlusGenerator {
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setDbType(DbType.MYSQL);
-        dsc.setUrl("jdbc:mysql://localhost:7676/mysql?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8");
+        dsc.setUrl("jdbc:mysql://103.45.172.161:3306/blog_schema?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         //dsc.setSchemaName("item");
-        dsc.setUsername("Devlin");
+        dsc.setUsername("root");
         dsc.setPassword("Alpha.1111");
 
         /*dsc.setTypeConvert(new MySqlTypeConvert() {
@@ -75,7 +75,7 @@ public class MyBatisPlusGenerator {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("Jin");
+        gc.setAuthor("Devlin-Kim");
         gc.setOpen(false);
         gc.setSwagger2(true);
         //gc.setActiveRecord(true);
@@ -88,8 +88,8 @@ public class MyBatisPlusGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setParent("com.BlogForDevlin");
-        pc.setEntity("Mapper.BO");
-        pc.setMapper("Entity.BO");
+        pc.setEntity("Entity.BO");
+        pc.setMapper("Mapper.BO");
 
         mpg.setPackageInfo(pc);
 
@@ -114,7 +114,7 @@ public class MyBatisPlusGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude(scanner("表名"));
+        //strategy.setInclude(scanner("表名"));
         //strategy.setInclude("s_zhuxiang");
 
         strategy.setSuperEntityClass("com.baomidou.mybatisplus.extension.activerecord.Model");

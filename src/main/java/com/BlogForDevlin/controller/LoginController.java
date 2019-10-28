@@ -1,7 +1,6 @@
 package com.BlogForDevlin.controller;
 
 import com.BlogForDevlin.configuration.SecurityEncode;
-import com.BlogForDevlin.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +27,7 @@ public class LoginController implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         logger.info("用户的用户名: {}", username);
-        // TODO 根据用户名，查找到对应的密码，与权限
+        // TODO 根据用户名，查找到对应的密码，与权限\
 
         String password = passwordEncoder.passwordEncoder().encode("123456");
         logger.info("password: {}", password);

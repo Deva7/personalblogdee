@@ -7,7 +7,7 @@ spring:
   redis:
     database: 0
     port: 6379
-    host: 103.45.172.175
+    host: 103.45.172.161
     timeout: 50000
     password:
 
@@ -96,7 +96,7 @@ spring:
 #spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://103.45.172.175:3306/BlogDB?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC
+    url: jdbc:mysql://103.45.172.161:3306/blog_schema?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC
     username: root
     password: Alpha.1111
   config: classpath:logback-spring.xml

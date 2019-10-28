@@ -1,14 +1,12 @@
 package com.BlogForDevlin.controller;
 
-import com.BlogForDevlin.entity.DO.UserDetails;
-import com.BlogForDevlin.entity.DTO.UserDTO;
-import com.BlogForDevlin.mapper.UserMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +28,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class UserController {
 
     @Autowired
-    private UserMapper userMapper;
+    private com.BlogForDevlin.Mapper.BO.UserDetailsMapper userMapper;
 
     private static final Logger logger= LoggerFactory.getLogger(UserController.class);
     /**
@@ -40,18 +38,18 @@ public class UserController {
      * @return: void
      * @Date: 2019-08-04
      */
-    @ResponseBody
+    /*@ResponseBody
     @RequestMapping(value = "/init", method = POST)
     @ApiOperation(value = "测试接口", notes = "测试接口详细描述")
     public void UserInit(@ApiParam(required = true, name = "name", value = "姓名") @RequestBody UserDTO userDTO, HttpServletRequest httpServletRequest) {
-        UserDetails userDetails = new UserDetails();
+        com.BlogForDevlin.Entity.BO.UserDetails userDetails = new com.BlogForDevlin.Entity.BO.UserDetails();
         userDetails.setUserName(userDTO.getUserName());
         userDetails.setUserAddress(userDTO.getUserAddress());
         userDetails.setUserPhone(userDTO.getUserPhone());
         int count = userMapper.insert(userDetails);
 
         System.out.println(count + "?" + userDTO);
-    }
+    }*/
 
     /**
      * @Author: Devlin
@@ -60,11 +58,11 @@ public class UserController {
      * @return: void
      * @Date: 2019-08-08
      */
-    @ResponseBody
+    /*@ResponseBody
     @RequestMapping(value = "/initTest", method = POST)
     @ApiOperation(value = "测试接口", notes = "测试接口详细描述")
     public void initTest(@ApiParam(required = true, name = "name", value = "姓名") @RequestBody UserDetails userDetails, HttpServletRequest httpServletRequest) {
         int count = userMapper.insert(userDetails);
         System.out.println(count + "?" + userDetails);
-    }
+    }*/
 }
