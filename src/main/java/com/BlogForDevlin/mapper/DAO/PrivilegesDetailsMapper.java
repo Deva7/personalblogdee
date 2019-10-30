@@ -1,6 +1,7 @@
-package com.BlogForDevlin.Mapper.BO;
+package com.BlogForDevlin.mapper.DAO;
 
-import com.BlogForDevlin.Entity.BO.UserDetails;
+
+import com.BlogForDevlin.entity.DAO.PrivilegesDetails;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  * @since 2019-10-28
  */
 @Repository
-public interface UserDetailsMapper extends BaseMapper<UserDetails> {
+public interface PrivilegesDetailsMapper extends BaseMapper<PrivilegesDetails> {
 
 }

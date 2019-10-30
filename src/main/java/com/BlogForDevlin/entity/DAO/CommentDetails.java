@@ -1,4 +1,4 @@
-package com.BlogForDevlin.Entity.BO;
+package com.BlogForDevlin.entity.DAO;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -26,9 +26,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("File_Details")
-@ApiModel(value="FileDetails对象", description="")
-public class FileDetails extends Model {
+@TableName("Comment_Details")
+@ApiModel(value="CommentDetails对象", description="")
+public class CommentDetails extends Model {
 
     @ApiModelProperty(value = "PK_id gonna have it")
     @TableId(value = "id", type = IdType.AUTO)
@@ -46,22 +46,19 @@ public class FileDetails extends Model {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date gmtModifytime;
 
-    @ApiModelProperty(value = "related user_details")
-    @TableField("user_id")
-    private Integer userId;
+    @TableField("comment_context")
+    private String commentContext;
 
-    @TableField("file_size")
-    private String fileSize;
+    @ApiModelProperty(value = "related blog_id")
+    @TableField("blog_id")
+    private Integer blogId;
 
-    @TableField("file_path")
-    private String filePath;
+    @ApiModelProperty(value = "0 delete 1 publish 2 reported 3 secret")
+    @TableField("comment_status")
+    private Integer commentStatus;
 
-    @TableField("file_name")
-    private String fileName;
-
-    @ApiModelProperty(value = "0 delete 1 upload 2 secret ")
-    @TableField("file_status")
-    private Integer fileStatus;
+    @TableField("rate_count")
+    private Integer rateCount;
 
 
 

@@ -1,4 +1,4 @@
-package com.BlogForDevlin.Entity.BO;
+package com.BlogForDevlin.entity.DAO;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -26,9 +26,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("Comment_Details")
-@ApiModel(value="CommentDetails对象", description="")
-public class CommentDetails extends Model {
+@TableName("Privileges_Details")
+@ApiModel(value="PrivilegesDetails对象", description="")
+public class PrivilegesDetails extends Model {
 
     @ApiModelProperty(value = "PK_id gonna have it")
     @TableId(value = "id", type = IdType.AUTO)
@@ -46,19 +46,28 @@ public class CommentDetails extends Model {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date gmtModifytime;
 
-    @TableField("comment_context")
-    private String commentContext;
+    @ApiModelProperty(value = "0 n 1 y")
+    @TableField("privileges_insert")
+    private Integer privilegesInsert;
 
-    @ApiModelProperty(value = "related blog_id")
-    @TableField("blog_id")
-    private Integer blogId;
+    @ApiModelProperty(value = "0 n 1 y")
+    @TableField("privileges_publish")
+    private Integer privilegesPublish;
 
-    @ApiModelProperty(value = "0 delete 1 publish 2 reported 3 secret")
-    @TableField("comment_status")
-    private Integer commentStatus;
+    @ApiModelProperty(value = "0 n 1 y")
+    @TableField("privileges_user")
+    private Integer privilegesUser;
 
-    @TableField("rate_count")
-    private Integer rateCount;
+    @ApiModelProperty(value = "0 n 1 y")
+    @TableField("privileges_tag")
+    private Integer privilegesTag;
+
+    @TableField("privileges_name")
+    private String privilegesName;
+
+    @ApiModelProperty(value = "0 delete 1 publish 2 used 3 abandon ")
+    @TableField("privileges_status")
+    private Integer privilegesStatus;
 
 
 

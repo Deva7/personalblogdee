@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * <p>
- * ${table.comment!} Mapper 接口
+ * ${table.comment!} Mapper Interface
  * </p>
  *
  * @author ${author}

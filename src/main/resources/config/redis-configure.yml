@@ -3,7 +3,7 @@
 #redis:
 #  database: 0
 #  #redis机器ip
-#  hostname: 103.45.172.175
+#  hostname: 103.45.172.161
 #  #redis端口
 #  port: 6379
 #  #redis密码

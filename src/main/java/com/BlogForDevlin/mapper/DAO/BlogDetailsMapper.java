@@ -1,6 +1,6 @@
-package com.BlogForDevlin.Mapper.BO;
+package com.BlogForDevlin.mapper.DAO;
 
-import com.BlogForDevlin.Entity.BO.FileDetails;
+import com.BlogForDevlin.entity.DAO.BlogDetails;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @since 2019-10-28
  */
 @Repository
-public interface FileDetailsMapper extends BaseMapper<FileDetails> {
+public interface BlogDetailsMapper extends BaseMapper<BlogDetails> {
 
 }

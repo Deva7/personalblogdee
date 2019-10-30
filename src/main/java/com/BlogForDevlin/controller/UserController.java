@@ -1,20 +1,11 @@
 package com.BlogForDevlin.controller;
 
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.http.HttpServletRequest;
-
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * @program: personalblog
@@ -42,7 +33,7 @@ public class UserController {
     @RequestMapping(value = "/init", method = POST)
     @ApiOperation(value = "测试接口", notes = "测试接口详细描述")
     public void UserInit(@ApiParam(required = true, name = "name", value = "姓名") @RequestBody UserDTO userDTO, HttpServletRequest httpServletRequest) {
-        com.BlogForDevlin.Entity.BO.UserDetails userDetails = new com.BlogForDevlin.Entity.BO.UserDetails();
+        com.BlogForDevlin.Entity.DAO.UserDetails userDetails = new com.BlogForDevlin.Entity.DAO.UserDetails();
         userDetails.setUserName(userDTO.getUserName());
         userDetails.setUserAddress(userDTO.getUserAddress());
         userDetails.setUserPhone(userDTO.getUserPhone());

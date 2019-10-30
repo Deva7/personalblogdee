@@ -88,8 +88,8 @@ public class MyBatisPlusGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setParent("com.BlogForDevlin");
-        pc.setEntity("Entity.BO");
-        pc.setMapper("Mapper.BO");
+        pc.setEntity("Entity.DAO");
+        pc.setMapper("Mapper.DAO");
 
         mpg.setPackageInfo(pc);
 

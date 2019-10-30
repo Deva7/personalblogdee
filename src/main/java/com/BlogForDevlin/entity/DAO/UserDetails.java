@@ -1,4 +1,4 @@
-package com.BlogForDevlin.Entity.BO;
+package com.BlogForDevlin.entity.DAO;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -26,9 +26,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("Privileges_Details")
-@ApiModel(value="PrivilegesDetails对象", description="")
-public class PrivilegesDetails extends Model {
+@TableName("User_Details")
+@ApiModel(value="UserDetails对象", description="")
+public class UserDetails extends Model {
 
     @ApiModelProperty(value = "PK_id gonna have it")
     @TableId(value = "id", type = IdType.AUTO)
@@ -46,28 +46,25 @@ public class PrivilegesDetails extends Model {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date gmtModifytime;
 
-    @ApiModelProperty(value = "0 n 1 y")
-    @TableField("privileges_insert")
-    private Integer privilegesInsert;
+    @TableField("user_name")
+    private String userName;
 
-    @ApiModelProperty(value = "0 n 1 y")
-    @TableField("privileges_publish")
-    private Integer privilegesPublish;
+    @TableField("user_permission")
+    private Integer userPermission;
 
-    @ApiModelProperty(value = "0 n 1 y")
-    @TableField("privileges_user")
-    private Integer privilegesUser;
+    @ApiModelProperty(value = "0 delete 1 unenable 2 active 3 protected")
+    @TableField("user_status")
+    private Integer userStatus;
 
-    @ApiModelProperty(value = "0 n 1 y")
-    @TableField("privileges_tag")
-    private Integer privilegesTag;
+    @ApiModelProperty(value = "0 not sure 1 male 2 female")
+    @TableField("user_sex")
+    private Integer userSex;
 
-    @TableField("privileges_name")
-    private String privilegesName;
+    @TableField("user_git_id")
+    private String userGitId;
 
-    @ApiModelProperty(value = "0 delete 1 publish 2 used 3 abandon ")
-    @TableField("privileges_status")
-    private Integer privilegesStatus;
+    @TableField("user_ali_id")
+    private String userAliId;
 
 
 

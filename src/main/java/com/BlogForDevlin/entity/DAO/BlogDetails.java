@@ -1,4 +1,4 @@
-package com.BlogForDevlin.Entity.BO;
+package com.BlogForDevlin.entity.DAO;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;

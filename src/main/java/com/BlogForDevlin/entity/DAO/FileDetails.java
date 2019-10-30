@@ -1,4 +1,4 @@
-package com.BlogForDevlin.Entity.BO;
+package com.BlogForDevlin.entity.DAO;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -26,9 +26,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("User_Details")
-@ApiModel(value="UserDetails对象", description="")
-public class UserDetails extends Model {
+@TableName("File_Details")
+@ApiModel(value="FileDetails对象", description="")
+public class FileDetails extends Model {
 
     @ApiModelProperty(value = "PK_id gonna have it")
     @TableId(value = "id", type = IdType.AUTO)
@@ -46,25 +46,22 @@ public class UserDetails extends Model {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date gmtModifytime;
 
-    @TableField("user_name")
-    private String userName;
+    @ApiModelProperty(value = "related user_details")
+    @TableField("user_id")
+    private Integer userId;
 
-    @TableField("user_permission")
-    private Integer userPermission;
+    @TableField("file_size")
+    private String fileSize;
 
-    @ApiModelProperty(value = "0 delete 1 unenable 2 active 3 protected")
-    @TableField("user_status")
-    private Integer userStatus;
+    @TableField("file_path")
+    private String filePath;
 
-    @ApiModelProperty(value = "0 not sure 1 male 2 female")
-    @TableField("user_sex")
-    private Integer userSex;
+    @TableField("file_name")
+    private String fileName;
 
-    @TableField("user_git_id")
-    private String userGitId;
-
-    @TableField("user_ali_id")
-    private String userAliId;
+    @ApiModelProperty(value = "0 delete 1 upload 2 secret ")
+    @TableField("file_status")
+    private Integer fileStatus;
 
 
 
