@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/User")
 public class UserController {
 
-    @Autowired
-    private com.BlogForDevlin.Mapper.BO.UserDetailsMapper userMapper;
+    /*@Autowired
+    private com.BlogForDevlin.Mapper.BO.UserDetailsMapper userMapper;*/
 
     private static final Logger logger= LoggerFactory.getLogger(UserController.class);
     /**

@@ -1,3 +1,4 @@
+/*
 package com.BlogForDevlin.service;
 
 import com.BlogForDevlin.entity.DAO.UserDetails;
@@ -12,12 +13,14 @@ import java.security.Permission;
 import java.util.ArrayList;
 import java.util.List;
 
+*/
 /**
  * @author Jinyl
  * @date 2019/10/30
  * @Mail Jinyl@mail.taiji.com.cn
  * @Describe:
- */
+ *//*
+
 @Service
 public class CustomUserService implements UserDetailsService {
     @Autowired
@@ -44,3 +47,4 @@ public class CustomUserService implements UserDetailsService {
         }
     }
 }
+*/

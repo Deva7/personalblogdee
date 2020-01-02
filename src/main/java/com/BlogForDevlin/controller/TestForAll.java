@@ -26,6 +26,8 @@ public class TestForAll {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
+    @Autowired
+    SenderController senderController;
 
     @GetMapping
     public String getUsers() {
@@ -49,4 +51,16 @@ public class TestForAll {
 
         System.out.println("Redis key 'name' value is: " + str);
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/testChat", method = GET)
+    @ApiOperation(value = "testChat", notes = "testChat")
+    public void testChat(HttpServletRequest httpServletRequest) {
+        senderController.send();
+        /*stringRedisTemplate.opsForValue().set("name", "123123");
+        String str = stringRedisTemplate.opsForValue().get("name");
+
+        System.out.println("Redis key 'name' value is: " + str);*/
+    }
+
 }

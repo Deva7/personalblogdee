@@ -1,17 +1,9 @@
 package com.BlogForDevlin.configuration;
 
-import com.BlogForDevlin.service.CustomUserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 
 /**
  * @program: personalblog
@@ -24,21 +16,21 @@ import org.springframework.security.web.access.intercept.FilterSecurityIntercept
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private MyFilterSecurityInterceptor myFilterSecurityInterceptor;
+    /*@Autowired
+    private MyFilterSecurityInterceptor myFilterSecurityInterceptor;*/
 
-    @Bean
+    /*@Bean
     UserDetailsService customUserService(){ //注册UserDetailsService 的bean
         return new CustomUserService();
-    }
+    }*/
 
-    @Override
+    /*@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(customUserService()); //user Details Service验证
 
-    }
+    }*/
 
-    @Override
+    /*@Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .anyRequest().authenticated() //任何请求,登录后可以访问
@@ -50,9 +42,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().permitAll(); //注销行为任意访问
         http.addFilterBefore(myFilterSecurityInterceptor, FilterSecurityInterceptor.class);
-    }
+    }*/
 
-    /*@Override
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .anyRequest()
@@ -61,12 +53,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .permitAll();//配置不需要登录验证
 
-        *//*http.formLogin()
+        /*http.formLogin()
                 .and()
                 .authorizeRequests()        // 定义哪些URL需要被保护、哪些不需要被保护
                 .anyRequest()               // 任何请求,登录后可以访问
-                .authenticated();*//*
-    }*/
+                .authenticated();*/
+    }
 
     /*@Override
     public void configure(WebSecurity web) throws Exception {

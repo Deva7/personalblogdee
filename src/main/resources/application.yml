@@ -1,12 +1,23 @@
 spring:
   profiles:
-  #    active: prod
-      active: mysql
+    #    active: prod
+    active: mysql
   #    active: oracle
   #    active: tielu
   #    active: hou
   thymeleaf:
     cache: false
+  rabbitmq:
+    addresses: 10.94.21.117
+    host: 15672
+    username: DevlinKim
+    password: Test.1234
+    listener:
+      direct:
+        prefetch: 5
+      simple:
+        max-concurrency: 20
+        concurrency: 10
 
 mybatis-plus:
   configuration:
