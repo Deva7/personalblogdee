@@ -1,4 +1,4 @@
-package com.BlogForDevlin.entity.DAO;
+package com.BlogForDevlin.Entity.DAO;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -21,14 +21,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
     * </p>
  *
  * @author Devlin-Kim
- * @since 2019-10-28
+ * @since 2020-01-03
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("Comment_Details")
-@ApiModel(value="CommentDetails对象", description="")
-public class CommentDetails extends Model {
+@TableName("Role_Details")
+@ApiModel(value="RoleDetails DAO Object", description="")
+public class RoleDetails extends Model {
 
     @ApiModelProperty(value = "PK_id gonna have it")
     @TableId(value = "id", type = IdType.AUTO)
@@ -46,19 +46,17 @@ public class CommentDetails extends Model {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date gmtModifytime;
 
-    @TableField("comment_context")
-    private String commentContext;
+    @TableField("role_name")
+    private String roleName;
 
-    @ApiModelProperty(value = "related blog_id")
-    @TableField("blog_id")
-    private Integer blogId;
+    @TableField("permission_id")
+    private Integer permissionId;
 
-    @ApiModelProperty(value = "0 delete 1 publish 2 reported 3 secret")
-    @TableField("comment_status")
-    private Integer commentStatus;
+    @TableField("remark")
+    private String remark;
 
-    @TableField("rate_count")
-    private Integer rateCount;
+    @TableField("status")
+    private Integer status;
 
 
 

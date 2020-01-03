@@ -1,7 +1,7 @@
 /*
 package com.BlogForDevlin.service;
 
-import com.BlogForDevlin.entity.DAO.UserDetails;
+import com.BlogForDevlin.Entity.DAO.UserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

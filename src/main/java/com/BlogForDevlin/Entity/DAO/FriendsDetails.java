@@ -1,4 +1,4 @@
-package com.BlogForDevlin.entity.DAO;
+package com.BlogForDevlin.Entity.DAO;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -21,14 +21,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
     * </p>
  *
  * @author Devlin-Kim
- * @since 2019-10-28
+ * @since 2020-01-03
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("Privileges_Details")
-@ApiModel(value="PrivilegesDetails对象", description="")
-public class PrivilegesDetails extends Model {
+@TableName("Friends_Details")
+@ApiModel(value="FriendsDetails DAO Object", description="")
+public class FriendsDetails extends Model {
 
     @ApiModelProperty(value = "PK_id gonna have it")
     @TableId(value = "id", type = IdType.AUTO)
@@ -46,28 +46,14 @@ public class PrivilegesDetails extends Model {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date gmtModifytime;
 
-    @ApiModelProperty(value = "0 n 1 y")
-    @TableField("privileges_insert")
-    private Integer privilegesInsert;
+    @TableField("main_user_id")
+    private Integer mainUserId;
 
-    @ApiModelProperty(value = "0 n 1 y")
-    @TableField("privileges_publish")
-    private Integer privilegesPublish;
+    @TableField("friends_user_id")
+    private Integer friendsUserId;
 
-    @ApiModelProperty(value = "0 n 1 y")
-    @TableField("privileges_user")
-    private Integer privilegesUser;
-
-    @ApiModelProperty(value = "0 n 1 y")
-    @TableField("privileges_tag")
-    private Integer privilegesTag;
-
-    @TableField("privileges_name")
-    private String privilegesName;
-
-    @ApiModelProperty(value = "0 delete 1 publish 2 used 3 abandon ")
-    @TableField("privileges_status")
-    private Integer privilegesStatus;
+    @TableField("status")
+    private Integer status;
 
 
 

@@ -43,11 +43,12 @@ public class TestForAll {
      */
     @ResponseBody
     @RequestMapping(value = "/redisConnect", method = GET)
-    @ApiOperation(value = "testRedis", notes = "redis connect and value get")
+    @ApiOperation(value = "testRedis1111", notes = "redis connect and value get 111")
     public void UserInit(HttpServletRequest httpServletRequest) {
 
         stringRedisTemplate.opsForValue().set("name", "123123");
         String str = stringRedisTemplate.opsForValue().get("name");
+        //BlogDetailsC blogDetails=blogDetailsMapper.selectByIdForTest("1");
 
         System.out.println("Redis key 'name' value is: " + str);
     }

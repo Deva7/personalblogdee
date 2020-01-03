@@ -1,10 +1,9 @@
-package com.BlogForDevlin.entity.DAO;
+package com.BlogForDevlin.Entity.DAO;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,14 +20,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
     * </p>
  *
  * @author Devlin-Kim
- * @since 2019-10-28
+ * @since 2020-01-03
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("File_Details")
-@ApiModel(value="FileDetails对象", description="")
-public class FileDetails extends Model {
+@TableName("User_Details")
+@ApiModel(value="UserDetails DAO Object", description="")
+public class UserDetails extends Model {
 
     @ApiModelProperty(value = "PK_id gonna have it")
     @TableId(value = "id", type = IdType.AUTO)
@@ -46,22 +45,32 @@ public class FileDetails extends Model {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date gmtModifytime;
 
-    @ApiModelProperty(value = "related user_details")
-    @TableField("user_id")
-    private Integer userId;
+    @TableField("user_name")
+    private String userName;
 
-    @TableField("file_size")
-    private String fileSize;
+    @TableField("nick_name")
+    private String nickName;
 
-    @TableField("file_path")
-    private String filePath;
+    @TableField("user_age")
+    private Integer userAge;
 
-    @TableField("file_name")
-    private String fileName;
+    @TableField("user_pic")
+    private String userPic;
 
-    @ApiModelProperty(value = "0 delete 1 upload 2 secret ")
-    @TableField("file_status")
-    private Integer fileStatus;
+    @TableField("user_role")
+    private Integer userRole;
+
+    @TableField("remark")
+    private String remark;
+
+    @TableField("status")
+    private Integer status;
+
+    @TableField("other_platform")
+    private String otherPlatform;
+
+    @TableField("url")
+    private String url;
 
 
 

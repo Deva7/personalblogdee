@@ -1,17 +1,16 @@
-package com.BlogForDevlin.mapper.DAO;
+package com.BlogForDevlin.Mapper.DAO;
 
-
-import com.BlogForDevlin.entity.DAO.UserDetails;
+import com.BlogForDevlin.Entity.DAO.UserDetails;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 
 /**
  * <p>
- *  Mapper 接口
+ *  Mapper Interface
  * </p>
  *
  * @author Devlin-Kim
- * @since 2019-10-28
+ * @since 2020-01-03
  */
 @Repository
 public interface UserDetailsMapper extends BaseMapper<UserDetails> {

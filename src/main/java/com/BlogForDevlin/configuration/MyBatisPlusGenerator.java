@@ -47,11 +47,11 @@ public class MyBatisPlusGenerator {
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setDbType(DbType.MYSQL);
-        dsc.setUrl("jdbc:mysql://103.45.172.161:3306/blog_schema?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8");
+        dsc.setUrl("jdbc:mysql://18.177.224.154:3306/blog_schema?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         //dsc.setSchemaName("item");
         dsc.setUsername("root");
-        dsc.setPassword("Alpha.1111");
+        dsc.setPassword("Test.1234");
 
         /*dsc.setTypeConvert(new MySqlTypeConvert() {
             @Override
@@ -104,8 +104,8 @@ public class MyBatisPlusGenerator {
         // 配置模板
         TemplateConfig templateConfig = new TemplateConfig();
 
-        templateConfig.setEntity("Templates/entity.java");
-        templateConfig.setMapper("Templates/mapper.java");
+        templateConfig.setEntity("MybatisPlusTemplates/Entity.java");
+        templateConfig.setMapper("MybatisPlusTemplates/Mapper.java");
         templateConfig.setController(null);
         templateConfig.setService(null);
         templateConfig.setServiceImpl(null);
@@ -114,7 +114,7 @@ public class MyBatisPlusGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        //strategy.setInclude(scanner("表名"));
+        strategy.setInclude(scanner("表名"));
         //strategy.setInclude("s_zhuxiang");
 
         strategy.setSuperEntityClass("com.baomidou.mybatisplus.extension.activerecord.Model");

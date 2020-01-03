@@ -1,4 +1,4 @@
-package com.BlogForDevlin.entity.DAO;
+package com.BlogForDevlin.Entity.DAO;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -21,14 +21,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
     * </p>
  *
  * @author Devlin-Kim
- * @since 2019-10-28
+ * @since 2020-01-03
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("User_Details")
-@ApiModel(value="UserDetails对象", description="")
-public class UserDetails extends Model {
+@TableName("Permission_Details")
+@ApiModel(value="PermissionDetails DAO Object", description="")
+public class PermissionDetails extends Model {
 
     @ApiModelProperty(value = "PK_id gonna have it")
     @TableId(value = "id", type = IdType.AUTO)
@@ -46,25 +46,26 @@ public class UserDetails extends Model {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date gmtModifytime;
 
-    @TableField("user_name")
-    private String userName;
+    @TableField("permission_name")
+    private String permissionName;
 
-    @TableField("user_permission")
-    private Integer userPermission;
+    @TableField("edit")
+    private Integer edit;
 
-    @ApiModelProperty(value = "0 delete 1 unenable 2 active 3 protected")
-    @TableField("user_status")
-    private Integer userStatus;
+    @TableField("publish")
+    private Integer publish;
 
-    @ApiModelProperty(value = "0 not sure 1 male 2 female")
-    @TableField("user_sex")
-    private Integer userSex;
+    @TableField("delete_all")
+    private Integer deleteAll;
 
-    @TableField("user_git_id")
-    private String userGitId;
+    @TableField("talk")
+    private Integer talk;
 
-    @TableField("user_ali_id")
-    private String userAliId;
+    @TableField("manage")
+    private Integer manage;
+
+    @TableField("status")
+    private Integer status;
 
 
 
