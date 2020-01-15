@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
  * </p>
  *
  * @author Devlin-Kim
- * @since 2020-01-03
+ * @since 2020-01-15
  */
 @Repository
 public interface UserDetailsMapper extends BaseMapper<UserDetails> {

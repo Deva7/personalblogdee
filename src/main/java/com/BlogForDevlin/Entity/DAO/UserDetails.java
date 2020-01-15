@@ -1,18 +1,19 @@
 package com.BlogForDevlin.Entity.DAO;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import org.springframework.format.annotation.DateTimeFormat;
-import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.util.Date;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
     * </p>
  *
  * @author Devlin-Kim
- * @since 2020-01-03
+ * @since 2020-01-15
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -71,6 +72,10 @@ public class UserDetails extends Model {
 
     @TableField("url")
     private String url;
+
+    @ApiModelProperty(value = "password")
+    @TableField("password")
+    private String password;
 
 
 
